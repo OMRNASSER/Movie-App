@@ -54,6 +54,7 @@ class MovieModel {
     List<String> temp = [];
     list.map((e) => temp.add(e.toString())).toList();
     return temp;
+  }
 
 
 
