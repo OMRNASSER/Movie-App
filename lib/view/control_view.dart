@@ -60,6 +60,7 @@ class ControlView extends GetWidget<ControlViewModel> {
               child: Icon(Icons.add_to_photos_rounded),
             ),
           ),
+
           BottomNavigationBarItem(
             activeIcon: const Padding(
               padding: EdgeInsets.only(top: 8.0),

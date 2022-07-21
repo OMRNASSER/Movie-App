@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:movie/model/movie_model.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class VideoView extends StatefulWidget {
-  const VideoView({Key? key}) : super(key: key);
+
+  MovieModel  movieVideo ;
+
+
+  VideoView({required this.movieVideo});
 
   @override
   State<VideoView> createState() => _VideoViewState();
@@ -16,7 +21,7 @@ class _VideoViewState extends State<VideoView> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _controller = YoutubePlayerController(initialVideoId: convertURl('https://youtu.be/ln3_7reloiY')!) ;
+    _controller = YoutubePlayerController(initialVideoId: convertURl( widget.movieVideo.movieTrailerLink )!) ;
 
 
   }
@@ -48,8 +53,8 @@ class _VideoViewState extends State<VideoView> {
     );
   }
 
-  String? convertURl(String url){
-    return YoutubePlayer.convertUrlToId(url);
+  String? convertURl(String? url){
+    return YoutubePlayer.convertUrlToId(url!);
 
   }
 }

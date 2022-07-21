@@ -2,6 +2,7 @@
 import "package:flutter/material.dart" ;
 class MovieModel {
   String? movieName, movieImage, classification, movieDetails , movieTrailerLink;
+  int? Id  ;
 
   List<String>? castImageList;
 
@@ -15,6 +16,7 @@ class MovieModel {
       this.castImageList,
       this.castNamesList,
       this.movieTrailerLink ,
+      this.Id
       );
   MovieModel.fromJson(Map<dynamic , dynamic> map){
     if(map == null ){
@@ -25,8 +27,9 @@ class MovieModel {
     classification = map['classification'] ;
     movieDetails = map['movieDetails'] ;
     movieTrailerLink = map['movieTrailerLink'] ;
-    castImageList =getImageList( map['castImageList']== null ? []  : map['castImageList'].toList());
-    castNamesList = getNameList(map['castNamesList'] == null ? []  : map['castImageList'].toList());
+    Id = map['Id'] ;
+    castImageList = getImageList( map['castImageList']== null ? []  : map['castImageList'].toList());
+    castNamesList = getNameList(map['castNamesList'] == null ? []  : map['castNamesList'].toList());
 
 
 
@@ -41,6 +44,7 @@ class MovieModel {
       'movieTrailer': movieTrailerLink,
       'castImageList': castImageList,
       'castNamesList': castNamesList,
+      'Id' : Id ,
 
 
     };
